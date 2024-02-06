@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roblox888i's Website</title>
+    <!-- Favicon links -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+
     <style>
         body {
             margin: 0;
@@ -12,78 +17,15 @@
             transition: background-color 1s ease;
         }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        nav {
-            background-color: #444;
-            overflow: hidden;
-        }
-
-        nav a {
-            float: left;
-            display: block;
-            color: #fff;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #555;
-            color: #ddd;
-            transform: scale(1.1);
-        }
-
-        main {
-            padding: 20px;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
+        /* ... (your existing styles) ... */
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Roblox888i's Website</h1>
-</header>
-
-<nav>
-    <a href="home.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Contact</a>
-</nav>
-
-<main>
-    <!-- Content will be loaded here -->
-    <p>Welcome to my website! Feel free to explore the different sections.</p>
-</main>
+<!-- Your website content goes here -->
 
 <script>
-    // Optional: Add JavaScript for smooth scrolling
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            fetch(this.getAttribute('href'))
-                .then(response => response.text())
-                .then(html => {
-                    document.querySelector('main').innerHTML = html;
-                });
-        });
-    });
+    // Your scripts go here
 </script>
 
 </body>

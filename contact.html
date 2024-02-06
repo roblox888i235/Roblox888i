@@ -1,69 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox888i's Website</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
-            transition: background-color 1s ease;
-        }
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Fetch initial content
+        fetchContent('home.html');
 
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
+        // Handle navigation clicks
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetPage = this.getAttribute('href');
+                fetchContent(targetPage);
 
-        nav {
-            background-color: #444;
-            overflow: hidden;
-        }
+                // Highlight the active tab
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
 
-        nav a {
-            float: left;
-            display: block;
-            color: #fff;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        function fetchContent(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(html => {
+                    document.querySelector('main').innerHTML = html;
+                });
         }
-
-        nav a:hover {
-            background-color: #555;
-            color: #ddd;
-            transform: scale(1.1);
-        }
-
-        main {
-            padding: 20px;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        .contact-form {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .contact
+    });
+</script>

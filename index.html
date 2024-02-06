@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+</head>
+
+<body>
+    <header>
+        <h1>Your Website Name</h1>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <script>
+        // Optional: Add JavaScript for smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                fetch(this.getAttribute('href'))
+                    .then(response => response.text())
+                    .then(html => {
+                        document.querySelector('main').innerHTML = html;
+                    });
+            });
+        });
+    </script>
+
+    <main>
+        <!-- Content will be loaded here -->
+    </main>
+</body>
+
+</html>

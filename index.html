@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roblox888i's Website</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
             margin: 0;
@@ -33,7 +31,7 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
         }
 
         nav a:hover {
@@ -53,6 +51,21 @@
                 opacity: 1;
             }
         }
+
+        .home-tab {
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .home-tab:hover {
+            background-color: #2980b9;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -62,7 +75,7 @@
 </header>
 
 <nav>
-    <a href="home.html">Home</a>
+    <a href="home.html" class="home-tab">Home</a>
     <a href="about.html">About</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>

@@ -1,27 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox888i's Website</title>
+    <!-- Add your favicon link here -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Your existing styles go here */
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Roblox888i's Website</h1>
+</header>
+
+<nav>
+    <a href="home.html" onclick="loadPage('home.html')">Home</a>
+    <a href="about.html" onclick="loadPage('about.html')">About</a>
+    <a href="portfolio.html" onclick="loadPage('portfolio.html')">Portfolio</a>
+    <a href="contact.html" onclick="loadPage('contact.html')">Contact</a>
+</nav>
+
+<main>
+    <!-- Content will be loaded here -->
+</main>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Fetch initial content
-        fetchContent('home.html');
-
-        // Handle navigation clicks
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetPage = this.getAttribute('href');
-                fetchContent(targetPage);
-
-                // Highlight the active tab
-                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-                this.classList.add('active');
+    function loadPage(page) {
+        fetch(page)
+            .then(response => response.text())
+            .then(html => {
+                document.querySelector('main').innerHTML = html;
             });
-        });
 
-        function fetchContent(page) {
-            fetch(page)
-                .then(response => response.text())
-                .then(html => {
-                    document.querySelector('main').innerHTML = html;
-                });
-        }
-    });
+        // Optional: Highlight the active tab
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = Array.from(navLinks).find(link => link.getAttribute('href') === page);
+        activeLink.classList.add('active');
+    }
 </script>
+
+</body>
+</html>

@@ -6,46 +6,37 @@
     <meta name="description" content="Your website description here">
     <title>About Roblox888i</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-background-image.jpg');
-            background-size: cover;
-            color: #fff;
-            text-align: center;
-            font-family: 'Arial', sans-serif;
-        }
 
-        h1 {
-            font-size: 3em;
-        }
-
-        section {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #333;
-            color: #fff;
-            font-size: 2em;
-        }
-    </style>
-</head>
 <body>
-    <h1>Roblox888i's website</h1>
+    <header>
+        <h1>Roblox888i's website</h1>
+    </header>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Roblox888i is a user who makes stuff.</p>
-    </section>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-    <!-- Other Sections (Portfolio, Contact, etc.) -->
-    <!-- Add more sections as needed with unique IDs -->
+    <script>
+        // Optional: Add JavaScript for smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
+                fetch(this.getAttribute('href'))
+                    .then(response => response.text())
+                    .then(html => {
+                        document.querySelector('main').innerHTML = html;
+                    });
+            });
+        });
+    </script>
+
+    <main>
+        <!-- Content will be loaded here -->
+    </main>
 </body>
+
 </html>
